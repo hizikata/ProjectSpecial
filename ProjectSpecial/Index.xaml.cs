@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Reflection;
 
 namespace ProjectSpecial
 {
@@ -18,9 +19,37 @@ namespace ProjectSpecial
     /// </summary>
     public partial class Index : Window
     {
+        private Assembly _assembly = Assembly.GetExecutingAssembly();
         public Index()
         {
             InitializeComponent();
+        }
+
+        private void WrapPanel_Click(object sender, RoutedEventArgs e)
+        {
+            //根据点击button的Tag打开对应窗口 
+            //窗口文件必须放在路径：/ProjectSpecial/View 下
+            if(e.OriginalSource is Button button)
+            {
+                if(button.Tag!=null)
+                {
+                    string windowTag = button.Tag.ToString();
+                    Window window = (Window)_assembly.CreateInstance("ProjectSpecial.View." + windowTag);
+                    window.Owner = this;
+                    window.Show();
+                }
+                else
+                {
+                    MessageBox.Show("无Tag标签，请设置后重试");
+                }
+            }
+            else
+            {
+                throw new Exception("请点击Button");
+            }
+
+            
+            
         }
     }
 }

@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="yes"?>
+<root Title="菜单">
+  <Menu Title="型号添加">
+  </Menu>
+  <Menu Title="参数更改">
+    <MenuItem Title="型号参数">
+    </MenuItem>
+    <MenuItem Title="站别设置">
+    </MenuItem>
+    <MenuItem Title="通用参数">
+    </MenuItem>
+    <MenuItem Title="三合一参数">
+    </MenuItem>
+    <MenuItem Title="标签设置">
+    </MenuItem>
+    <MenuItem Title="测报导出">
+    </MenuItem>
+    <MenuItem Title="物料设置">
+    </MenuItem>
+    <MenuItem Title="物料注册">
+    </MenuItem>
+  </Menu>
+  <Menu Title="LIV参数更改">
+  </Menu>
+  <Menu Title="SEN参数更改">
+  </Menu>
+  <Menu Title="流程卡管理">
+  </Menu>
+  <Menu Title="标签模板管理">
+  </Menu>
+</root>

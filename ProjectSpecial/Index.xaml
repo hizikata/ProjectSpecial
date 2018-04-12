@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProjectSpecial"
-        mc:Ignorable="d"
-        Title="Index" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        xmlns:local="clr-namespace:ProjectSpecial"       
+        mc:Ignorable="d" 
+        Title="主窗口" Height="450" Width="800">
+    <WrapPanel ButtonBase.Click="WrapPanel_Click">
+        <Button x:Name="btnAvalon" Tag="FrmAvalon" Content="Avalon2.0展示" Padding="5" Margin="5"/>
+    </WrapPanel>
 </Window>

@@ -1,0 +1,47 @@
+﻿<Window x:Class="ProjectSpecial.View.FrmAvalon"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectSpecial.View"
+        xmlns:ava="http://schemas.xceed.com/wpf/xaml/avalondock"
+        mc:Ignorable="d"
+        Title="FrmAvalon" Height="450" Width="800">
+    <Window.Resources>
+        <XmlDataProvider x:Key="xdp"
+                         Source="/ProjectSpecial;component/DeveloperMenu.xml"
+                         XPath="/root/Menu"/>
+        <HierarchicalDataTemplate DataType="Menu"
+                                  ItemsSource="{Binding XPath=./*}">
+            <TextBlock Text="{Binding XPath=@Title}"/>
+        </HierarchicalDataTemplate>
+        <HierarchicalDataTemplate DataType="MenuItem">
+            <TextBlock Text="{Binding XPath=@Title}"/>
+        </HierarchicalDataTemplate>
+        
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" ItemsSource="{Binding Source={StaticResource xdp}}"/>
+        <ava:DockingManager Grid.Row="1">
+            <ava:LayoutRoot>
+                <ava:LayoutPanel>
+                    <ava:LayoutAnchorablePane DockMinWidth="140" DockWidth="160">
+                        <ava:LayoutAnchorable>
+                            <StackPanel >
+                                <TreeView ItemsSource="{Binding Source={StaticResource xdp}}"/>
+                            </StackPanel>
+                        </ava:LayoutAnchorable>
+                    </ava:LayoutAnchorablePane>
+                    <ava:LayoutDocumentPane>
+                        <ava:LayoutDocument></ava:LayoutDocument>
+                    </ava:LayoutDocumentPane>
+                </ava:LayoutPanel>
+            </ava:LayoutRoot>
+        </ava:DockingManager>
+    </Grid>
+</Window>
