@@ -36,6 +36,11 @@ namespace ProjectSpecial
                 {
                     string windowTag = button.Tag.ToString();
                     Window window = (Window)_assembly.CreateInstance("ProjectSpecial.View." + windowTag);
+                    if (window is null)
+                    {
+                        MessageBox.Show(string.Format("不存在该Tag标签的窗口 Tag:{0}", button.Tag), "系统提示");
+                        return;
+                    }                                         
                     window.Owner = this;
                     window.Show();
                 }

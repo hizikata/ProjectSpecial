@@ -45,6 +45,12 @@ namespace ProjectSpecial.ViewModel
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<AvalonViewModel>();
             SimpleIoc.Default.Register<TestViewModel>();
+            SimpleIoc.Default.Register<ValidateExceptionViewModel>();
+            SimpleIoc.Default.Register<DataValidateViewModel>();
+            SimpleIoc.Default.Register<ValidationRuleViewModel>();
+            SimpleIoc.Default.Register<DataErrorInfoViewModel>();
+            SimpleIoc.Default.Register<BindDataAnnotationsViewModel>();
+            SimpleIoc.Default.Register<PackedValidateViewModel>();
         }
 
         public MainViewModel Main
@@ -68,7 +74,49 @@ namespace ProjectSpecial.ViewModel
                 return ServiceLocator.Current.GetInstance<TestViewModel>();
             }
         }
-        
+        public ValidateExceptionViewModel ValidateException
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<ValidateExceptionViewModel>();
+            }
+        }
+        public DataValidateViewModel DataValidate
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<DataValidateViewModel>();
+            }
+        }
+        public ValidationRuleViewModel ValidationRule
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<ValidationRuleViewModel>();
+            }
+        }
+        public DataErrorInfoViewModel DataErrorInfo
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<DataErrorInfoViewModel>();
+            }
+        }
+        public BindDataAnnotationsViewModel BindDataAnnotation
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<BindDataAnnotationsViewModel>();
+            }
+        }
+        public PackedValidateViewModel PackedValidate
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<PackedValidateViewModel>();
+            }
+        }
+
         public static void Cleanup()
         {
             // TODO Clear the ViewModels

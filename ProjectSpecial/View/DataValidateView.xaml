@@ -1,0 +1,116 @@
+﻿<Window x:Class="ProjectSpecial.View.DataValidateView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectSpecial.View"
+        xmlns:val="clr-namespace:ProjectSpecial.ValidationClass"
+        mc:Ignorable="d"
+        
+        Title="DataValidateView" Height="795.259" Width="812.931">
+    <StackPanel>
+        <GroupBox Margin="10" Header="Exception验证" DataContext="{Binding Source={StaticResource Locator},Path=ValidateException}">
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                <Label Content="_UserName" Target="{Binding ElementName=tbUserName}"/>
+                <TextBox x:Name="tbUserName" MinWidth="150" HorizontalAlignment="Center">
+                    <TextBox.Text>
+                        <Binding Path="UserNameEx" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <ExceptionValidationRule/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Margin="10" Header="ValidationRule 验证" DataContext="{Binding Source={StaticResource Locator},Path=ValidationRule}">
+            <StackPanel Margin="0,20,0,0">
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="UserName:"/>
+                    <TextBox MinWidth="120">
+                        <TextBox.Text>
+                            <Binding Path="UserName" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <val:UserNameRule/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="Email:"/>
+                    <TextBox MinWidth="120">
+                        <TextBox.Text>
+                            <Binding Path="Email" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <val:EmailRule/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                </StackPanel>
+
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Margin="10" Header="IDataErrorInfo 验证" DataContext="{Binding Source={StaticResource Locator},Path=DataErrorInfo}">
+            <StackPanel Margin="0,20,0,0">
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="UserName:"/>
+                    <TextBox MinWidth="120" Text="{Binding UserName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}">
+
+                    </TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="Gender:"/>
+                    <RadioButton Content="male" VerticalAlignment="Center"/>
+                    <RadioButton Content="female" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="Birthday:"/>
+                    <DatePicker />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="PhoneNum:"/>
+                    <TextBox MinWidth="120" Text="{Binding PhoneNum,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="Email:"/>
+                    <TextBox MinWidth="120" Text="{Binding Email,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Margin="10" Header="IDataErrorInfo++ 验证" DataContext="{Binding Source={StaticResource Locator},Path=BindDataAnnotation}">
+            <StackPanel Margin="0,20,0,0">
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="UserName:"/>
+                    <TextBox MinWidth="120" Text="{Binding UserName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}">
+
+                    </TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="Gender:"/>
+                    <RadioButton Content="male" VerticalAlignment="Center"/>
+                    <RadioButton Margin="10,0,0,0" Content="female" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="Birthday:"/>
+                    <DatePicker />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="PhoneNum:"/>
+                    <TextBox MinWidth="120" Text="{Binding PhoneNum,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="Email:"/>
+                    <TextBox MinWidth="120" Text="{Binding Email,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}"/>
+                </StackPanel>
+                <Button MinWidth="60" Content="提交" Command="{Binding ValidFormCommand}" HorizontalAlignment="Left" Margin="100,10,10,10" Padding="3"/>
+            </StackPanel>
+            
+        </GroupBox>
+    </StackPanel>
+</Window>

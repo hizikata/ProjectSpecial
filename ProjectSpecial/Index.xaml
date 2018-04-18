@@ -12,7 +12,10 @@
 
         <model:ButtonWithImage x:Key="bwTest" ImagePath="/ProjectSpecial;component/Resource/add.png"
                                    DisplayInfo="Avalon2.0展示"/>
-
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="3"/>
+        </Style>
         <DataTemplate DataType="{x:Type model:ButtonWithImage}"
                       x:Key="bwi">
             <StackPanel Orientation="Horizontal">
@@ -22,7 +25,8 @@
         </DataTemplate>
     </Window.Resources>
     <WrapPanel ButtonBase.Click="WrapPanel_Click">
-        <Button Content="Avalon 2.0展示" Tag="FrmAvalon" Margin="5" Padding="5"/>
-
+        <Button Content="Avalon 2.0展示" Tag="FrmAvalon"/>
+        <Button Content="数据验证" Tag="DataValidateView" />
+        <Button Content="数据验证的抽象" Tag="PackedValidateView"/>
     </WrapPanel>
 </Window>
