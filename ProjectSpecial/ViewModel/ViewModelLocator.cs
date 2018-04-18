@@ -43,6 +43,8 @@ namespace ProjectSpecial.ViewModel
             ////}
 
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<AvalonViewModel>();
+            SimpleIoc.Default.Register<TestViewModel>();
         }
 
         public MainViewModel Main
@@ -50,6 +52,20 @@ namespace ProjectSpecial.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
+            }
+        }
+        public AvalonViewModel Avalon
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<AvalonViewModel>();
+            }
+        }
+        public TestViewModel Test
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<TestViewModel>();
             }
         }
         

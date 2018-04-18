@@ -4,18 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectSpecial.View"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:ava="http://schemas.xceed.com/wpf/xaml/avalondock"
-        mc:Ignorable="d"
+        mc:Ignorable="d" DataContext="{Binding Source={StaticResource Locator},Path=Avalon}"
         Title="FrmAvalon" Height="450" Width="800">
     <Window.Resources>
         <XmlDataProvider x:Key="xdp"
                          Source="/ProjectSpecial;component/DeveloperMenu.xml"
                          XPath="/root/Menu"/>
         <HierarchicalDataTemplate DataType="Menu"
-                                  ItemsSource="{Binding XPath=./*}">
+                                  ItemsSource="{Binding XPath=MenuItem}">
             <TextBlock Text="{Binding XPath=@Title}"/>
         </HierarchicalDataTemplate>
-        <HierarchicalDataTemplate DataType="MenuItem">
+        <HierarchicalDataTemplate DataType="MenuItem" ItemsSource="{Binding XPath=MenuItem}">
             <TextBlock Text="{Binding XPath=@Title}"/>
         </HierarchicalDataTemplate>
         
@@ -26,14 +27,21 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
+        <!--菜单栏-->
         <Menu Grid.Row="0" ItemsSource="{Binding Source={StaticResource xdp}}"/>
         <ava:DockingManager Grid.Row="1">
             <ava:LayoutRoot>
                 <ava:LayoutPanel>
                     <ava:LayoutAnchorablePane DockMinWidth="140" DockWidth="160">
+                        <!--导航菜单栏-->
                         <ava:LayoutAnchorable>
-                            <StackPanel >
-                                <TreeView ItemsSource="{Binding Source={StaticResource xdp}}"/>
+                            <StackPanel>
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="TreeViewItem.Selected" >
+                                        <i:InvokeCommandAction Command="{Binding TreeViewItemSelectedCommand}"  CommandParameter="{Binding ElementName=tView,Path=SelectedItem}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                                <TreeView x:Name="tView" ItemsSource="{Binding Source={StaticResource xdp}}"/>
                             </StackPanel>
                         </ava:LayoutAnchorable>
                     </ava:LayoutAnchorablePane>

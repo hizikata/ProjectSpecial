@@ -23,6 +23,7 @@ namespace ProjectSpecial
         public Index()
         {
             InitializeComponent();
+           
         }
 
         private void WrapPanel_Click(object sender, RoutedEventArgs e)

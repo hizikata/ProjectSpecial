@@ -3,10 +3,26 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProjectSpecial"       
-        mc:Ignorable="d" 
+        xmlns:local="clr-namespace:ProjectSpecial"
+        xmlns:model="clr-namespace:ProjectSpecial.Model"
+        xmlns:c="clr-namespace:System.Collections;assembly=mscorlib"
+        mc:Ignorable="d" DataContext="{Binding Source={StaticResource Locator},Path=Main}"
         Title="主窗口" Height="450" Width="800">
+    <Window.Resources>
+
+        <model:ButtonWithImage x:Key="bwTest" ImagePath="/ProjectSpecial;component/Resource/add.png"
+                                   DisplayInfo="Avalon2.0展示"/>
+
+        <DataTemplate DataType="{x:Type model:ButtonWithImage}"
+                      x:Key="bwi">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding ImagePath}"/>
+                <TextBlock Text="{Binding DispalyInfo}"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
     <WrapPanel ButtonBase.Click="WrapPanel_Click">
-        <Button x:Name="btnAvalon" Tag="FrmAvalon" Content="Avalon2.0展示" Padding="5" Margin="5"/>
+        <Button Content="Avalon 2.0展示" Tag="FrmAvalon" Margin="5" Padding="5"/>
+
     </WrapPanel>
 </Window>

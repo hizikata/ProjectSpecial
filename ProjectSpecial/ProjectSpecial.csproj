@@ -71,10 +71,16 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\ButtonWithImage.cs" />
+    <Compile Include="ViewModel\AvalonViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\TestViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\FrmAvalon.xaml.cs">
       <DependentUpon>FrmAvalon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmTest.xaml.cs">
+      <DependentUpon>FrmTest.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -109,16 +115,41 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MyDictionary\Style.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyDictionary\Template.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\FrmAvalon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\FrmTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="DeveloperMenu.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\accept%282%29.png" />
+    <Resource Include="Resources\accept.png" />
+    <Resource Include="Resources\add.png" />
+    <Resource Include="Resources\anti_xss.png" />
+    <Resource Include="Resources\aol_mail.png" />
+    <Resource Include="Resources\aol_messenger.png" />
+    <Resource Include="Resources\apache_handlers.png" />
+    <Resource Include="Resources\apple.png" />
+    <Resource Include="Resources\application_edit.png" />
+    <Resource Include="Resources\application_error.png" />
+    <Resource Include="Resources\application_key.png" />
+    <Resource Include="Resources\application_lightning.png" />
+    <Resource Include="Resources\application_osx_terminal.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
