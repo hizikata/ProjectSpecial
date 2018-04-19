@@ -51,6 +51,7 @@ namespace ProjectSpecial.ViewModel
             SimpleIoc.Default.Register<DataErrorInfoViewModel>();
             SimpleIoc.Default.Register<BindDataAnnotationsViewModel>();
             SimpleIoc.Default.Register<PackedValidateViewModel>();
+            SimpleIoc.Default.Register<DispatcherHelperViewModel>();
         }
 
         public MainViewModel Main
@@ -114,6 +115,13 @@ namespace ProjectSpecial.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<PackedValidateViewModel>();
+            }
+        }
+        public DispatcherHelperViewModel DispatcherHelper
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<DispatcherHelperViewModel>();
             }
         }
 

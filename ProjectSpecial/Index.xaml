@@ -28,5 +28,6 @@
         <Button Content="Avalon 2.0展示" Tag="FrmAvalon"/>
         <Button Content="数据验证" Tag="DataValidateView" />
         <Button Content="数据验证的抽象" Tag="PackedValidateView"/>
+        <Button Content="DispatcherHelper 异步线程" Tag="DispatcherHelperView"/>
     </WrapPanel>
 </Window>

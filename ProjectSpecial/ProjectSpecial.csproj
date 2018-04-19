@@ -79,6 +79,7 @@
     <Compile Include="ViewModel\BindDataAnnotationsViewModel.cs" />
     <Compile Include="ViewModel\DataErrorInfoViewModel.cs" />
     <Compile Include="ViewModel\DataValidateViewModel.cs" />
+    <Compile Include="ViewModel\DispatcherHelperViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\PackedValidateViewModel.cs" />
     <Compile Include="ViewModel\TestViewModel.cs" />
@@ -87,6 +88,9 @@
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\DataValidateView.xaml.cs">
       <DependentUpon>DataValidateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DispatcherHelperView.xaml.cs">
+      <DependentUpon>DispatcherHelperView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\FrmAvalon.xaml.cs">
       <DependentUpon>FrmAvalon.xaml</DependentUpon>
@@ -139,6 +143,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DataValidateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DispatcherHelperView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
