@@ -21,11 +21,11 @@ namespace ProjectSpecial.ViewModel
         {
             if(obj is TreeViewItem)
             {
-
+                throw new Exception("error");
             }
             else
             {
-
+                throw new Exception("error");
             }
         }
     }

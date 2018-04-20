@@ -1,13 +1,12 @@
 <?xml version="1.0" standalone="yes"?>
 <root Title="菜单">
-  <Menu Title="测试专用" tag="FrmTest">
+  <Menu Title="测试专用" Tag="FrmTest">
   </Menu>
   <Menu Title="型号添加">
   </Menu>
   <Menu Title="参数更改">
     <MenuItem Title="型号参数">
-      <MenuItem Title="型号参数">
-      </MenuItem>
+      
     </MenuItem>
     <MenuItem Title="站别设置">
     </MenuItem>

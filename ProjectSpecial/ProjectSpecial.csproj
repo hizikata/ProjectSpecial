@@ -163,7 +163,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="View\AvalonView\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="DeveloperMenu.xml">
       <SubType>Designer</SubType>
